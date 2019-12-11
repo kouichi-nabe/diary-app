@@ -19,6 +19,9 @@ class DiariesController < ApplicationController
     end
   end
 
+  def search
+  end
+
   private
   def diary_params
     params.require(:diary).permit(:title ,:content)
