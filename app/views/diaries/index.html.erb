@@ -1,1 +1,52 @@
-<h1>hello world</h1>
+<main class="home">
+  <section class="home__head">
+    <h2>Enjoy &nbsp;&nbsp; Carefree & freedom &nbsp;&nbsp; User</h2>
+  </section>
+
+  <section class="home__diaries">
+    <ul class="diaries">
+
+      <% 7.times do %>
+
+        <li class="diary-box">
+          <a href="#" class="diary-link">
+            <%= image_tag 'nightView.jpg', class: 'diary-image' %>
+            <div class="diary-title">
+              <time>2019.11.20</time>
+              <h3>dinner</h3>
+            </div>
+          </a>
+        </li>
+        <li class="diary-box">
+          <a href="#" class="diary-link">
+            <%= image_tag 'sunrays.jpg', class: 'diary-image' %>
+            <div class="diary-title">
+              <time>2019.11.20</time>
+              <h3>dinner</h3>
+            </div>
+          </a>
+        </li>
+        <li class="diary-box">
+          <a href="#" class="diary-link">
+            <%= image_tag 'sunset.jpg', class: 'diary-image' %>
+            <div class="diary-title">
+              <time>2019.11.20</time>
+              <h3>dinner</h3>
+            </div>
+          </a>
+        </li>
+        <li class="diary-box">
+          <a href="#" class="diary-link">
+            <%= image_tag 'dinner.jpg', class: 'diary-image' %>
+            <div class="diary-title">
+              <time>2019.11.20</time>
+              <h3>dinner</h3>
+            </div>
+          </a>
+        </li>
+
+      <% end %>
+
+    </ul>
+  </section>
+</main>

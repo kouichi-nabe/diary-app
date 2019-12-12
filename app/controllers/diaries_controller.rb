@@ -2,6 +2,9 @@ class DiariesController < ApplicationController
   before_action :authenticate_user!, only: [:show, :create]
   def index
     @diaries = Diary.all
+  end
+
+  def new
     @diary = Diary.new
   end
 
@@ -17,6 +20,9 @@ class DiariesController < ApplicationController
     else
       redirect_back(fallback_location: root_path)
     end
+  end
+
+  def search
   end
 
   private

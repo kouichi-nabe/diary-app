@@ -1,0 +1,81 @@
+.home {
+  &__head {
+    margin: 100px auto;
+    padding: 0;
+
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__diaries {
+
+    .diaries {
+      display: grid;
+      list-style-type: none;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+      .diary-box {
+
+        .diary-link {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background-color: transparent;
+            transition: all 0.5s ease-in-out;
+          }
+
+          .diary-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s ease-in-out;
+          }
+          .diary-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: transparent;
+            z-index: 11;
+            transition: all 0.5s ease-in-out;
+            time {
+              font-size: 1.6rem;
+              letter-spacing: 1px;
+            }
+            h3 {
+              font-size: 2.5rem;
+              letter-spacing: 1px;
+            }
+          }
+        }
+        &:hover .diary-link::before {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+        &:hover .diary-image {
+          width: 110%;
+          height: 110%;
+        }
+        &:hover .diary-title {
+          color: $white_color;
+        }
+      }
+    }
+  }
+}
