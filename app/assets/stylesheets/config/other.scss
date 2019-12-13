@@ -8,9 +8,12 @@ body {
   text-align: center;
   font-size: 1.4rem;
   font-family: 'Noto Sans JP', "Noto Serif JP", 'Roboto', Meiryo, sans-serif;
+  overflow-wrap: break-word;
 }
 *, *::before, *::after {
   box-sizing: border-box;
+  -webkit-appearance: none;
+  outline: 0;
 }
 a:link, a:visited, a:hover, a:active {
   color: $black_color;
@@ -21,6 +24,17 @@ a:link, a:visited, a:hover, a:active {
   content: "";
   display: block;
   clear: both;
+}
+dd {
+  display: block;
+}
+dd, dt, dd, em {
+  outline: 0;
+  border: 0;
+  background: 0 0;
+  vertical-align: baseline;
+  font-weight: 400;
+  font-size: 100%;
 }
 
 $breakpoints: (
