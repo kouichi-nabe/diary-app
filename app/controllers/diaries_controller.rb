@@ -1,11 +1,13 @@
 class DiariesController < ApplicationController
   before_action :authenticate_user!, only: [:show, :create]
+  
   def index
     @diaries = Diary.all
   end
 
   def new
     @diary = Diary.new
+    3.times { @diary.images.build }
   end
 
   def show
@@ -27,6 +29,6 @@ class DiariesController < ApplicationController
 
   private
   def diary_params
-    params.require(:diary).permit(:title ,:content)
+    params.require(:diary).permit(:title ,:content, images_attributes: [:image])
   end
 end

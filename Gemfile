@@ -66,3 +66,5 @@ gem 'active_hash'
 gem 'jquery-rails'
 gem "haml-rails"
 gem 'nested_form_fields'
+gem 'carrierwave'
+gem 'mini_magick'

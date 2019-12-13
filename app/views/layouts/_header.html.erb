@@ -7,9 +7,9 @@
         <span class="line"></span>
       </div>
     </div>
-    <a class="site-logo">
+    <%= link_to diaries_path, class: "site-logo" do %>
       <h1>DIARY APP</h1>
-    </a>
+    <% end %>
     <ul class="menu">
       <li>
         <%= form_tag('/diaries/search',class: "search-from", method: :get) do %>

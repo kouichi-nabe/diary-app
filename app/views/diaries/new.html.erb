@@ -1,0 +1,44 @@
+<%= form_for(@diary, html:{class: 'form__section'}, :url => {:action => :create}) do |f| %>
+  <dl class="form__fieldset">
+    <dt class="form__fieldset__title">
+      画像を投稿
+      <em class="form__fieldset__title__required">必須</em>
+    </dt>
+    <dd class="form__fieldset__content">
+      <div class="form__inner">
+        <%= f.fields_for :images do |image| %>
+          <%= image.file_field :image %>
+        <% end %>
+      </div>
+    </dd>
+  </dl>
+
+  <dl class="form__fieldset">
+    <dt class="form__fieldset__title">
+      タイトル
+      <em class="form__fieldset__title__required">必須</em>
+    </dt>
+    <dd class="form__fieldset__content">
+      <div class="form__inner">
+        <%= f.text_field :title, class: 'input-default' %>
+      </div>
+    </dd>
+  </dl>
+
+  <dl class="form__fieldset">
+    <dt class="form__fieldset__title">
+      タイトル
+      <em class="form__fieldset__title__required">必須</em>
+    </dt>
+    <dd class="form__fieldset__content">
+      <div class="form__inner">
+        <%= f.text_area :content, class: 'input-default' %>
+      </div>
+    </dd>
+  </dl>
+
+  <div class="form__submit">
+    <%= f.submit '投稿' %>
+  </div>
+
+<% end %>
