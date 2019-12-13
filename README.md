@@ -1,11 +1,15 @@
-# 日記アプリケーション(Ruby on Rails)
+# 簡単な日記アプリケーション(Ruby on Rails)です。
 
-# ER図
+
+
+
+
+## ER図
 
 ![diary-app](https://user-images.githubusercontent.com/47510849/70773019-9689f400-1db9-11ea-8c92-192052c15e8e.png)
 
 
-# usersテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
