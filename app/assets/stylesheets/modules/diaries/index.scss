@@ -90,6 +90,7 @@
   background-color: $white_color;
   box-shadow: 0 3px 5px $shadow_color;
   transition: all 0.3s ease-in-out;
+  z-index: 100;
   &:hover {
     background-color: $black_color;
     opacity: 0.9;
