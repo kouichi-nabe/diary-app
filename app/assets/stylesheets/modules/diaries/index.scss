@@ -15,7 +15,7 @@
     .diaries {
       display: grid;
       list-style-type: none;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
 
       .diary-box {
 
@@ -75,6 +75,15 @@
         &:hover .diary-title {
           color: $white_color;
         }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1190px){
+  .home {
+    &__diaries {
+      .diaries {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       }
     }
   }
