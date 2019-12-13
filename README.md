@@ -1,4 +1,6 @@
-#ER図
+# 日記アプリケーション(Ruby on Rails)
+
+# ER図
 
 ![diary-app](https://user-images.githubusercontent.com/47510849/70773019-9689f400-1db9-11ea-8c92-192052c15e8e.png)
 
