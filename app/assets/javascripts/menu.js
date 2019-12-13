@@ -12,18 +12,15 @@ $(function(){
 })
 
 document.addEventListener('DOMContentLoaded', function(){
-  const header = $('header');
-
-  // const windowSize = window.innerHeight
-  // const windowWidth = window.innerWidth
+  var header = $('header');
 
   function getScroll(){
-    const scrollHeight = window.pageYOffset;
+    var scrollHeight = window.pageYOffset;
     return scrollHeight
   }
 
   window.addEventListener('scroll', function(){
-    const scrollHeight = getScroll();
+    var scrollHeight = getScroll();
 
     if( scrollHeight > 200 ){
       header.addClass('active');
