@@ -1,24 +1,91 @@
-# README
+# 簡単な日記アプリケーション(Ruby on Rails)です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## ER図
 
-* Database creation
+![diary-app](https://user-images.githubusercontent.com/47510849/70773019-9689f400-1db9-11ea-8c92-192052c15e8e.png)
 
-* Database initialization
 
-* How to run the test suite
+## usersテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|nickname|sring|null: false|
+|email|sring|null: false|
+|password|string|null: false|
 
-* Deployment instructions
 
-* ...
+### Association
+- has_one :profile
+- has_many :diaries, dependent::destory
+
+
+## diariesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|title|sring|null: false|
+|content|text|
+|user_id|references|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :user
+- has_many :images, dependent: :destroy
+
+
+## profilesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|gender|integer|null: false|
+|age|integer|null: false|
+|prefecture_id|integer|null: false|
+|city|string|
+|user_id|references|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to_active_hash :prefecture
+- belongs_to :user
+
+
+## imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|diary_id|references|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :diary
+
+
+## like_diariesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|diary_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :diary
+- belongs_to :user
+
+
+## like_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|writer_id|references|null: false, foreign_key: true|
+|reader_id|references|null: false, foreign_key: true|
+
+
+### Association
+- belongs_to :writer, class_name "User"
+- belongs_to :reader, class_name "User"
