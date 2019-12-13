@@ -3,7 +3,7 @@ $(document).ready(function () {
     hsize = $(window).width() / 3;
     $(".diary-box").css("height", hsize + "px");
   } else {
-    hsize = $(window).width() / 1.8;
+    hsize = $(window).width() / 2;
     $(".diary-box").css("height", hsize + "px");
   }
 });
@@ -12,7 +12,7 @@ $(window).resize(function () {
     hsize = $(window).width() / 3;
     $(".diary-box").css("height", hsize + "px");
   } else {
-    hsize = $(window).width() / 1.8;
+    hsize = $(window).width() / 2;
     $(".diary-box").css("height", hsize + "px");
   }
 });

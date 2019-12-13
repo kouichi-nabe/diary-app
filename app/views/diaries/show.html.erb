@@ -1,0 +1,40 @@
+<section class="diary__page">
+  <div class="diary__page__head">
+    <div class="diary__page__head__inner">
+      <% if @diary.images.length == 3 %>
+        <div class="three__images__head">
+          <%= image_tag @diary.images[0].image.url, class: 'three__images__head__image' %>
+        </div>
+        <div class="three__images__bottom">
+          <%= image_tag @diary.images[1].image.url, class: 'three__images__bottom__image' %>
+          <%= image_tag @diary.images[2].image.url, class: 'three__images__bottom__image' %>
+        </div>
+      <% elsif @diary.images.length == 2 %>
+        <div class="two__images__head">
+          <%= image_tag @diary.images[0].image.url, class: 'two__images__head__image' %>
+        </div>
+        <div class="two__images__bottom">
+          <%= image_tag @diary.images[1].image.url, class: 'two__images__bottom__image' %>
+        </div>
+      <% else %>
+        <div class="one__images__head">
+          <%= image_tag @diary.images[0].image.url, class: 'one__images__head__image' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="diary__page__main">
+    <div class="diary__page__main__title">
+      <h2 class="diary__title">
+        <%= @diary.title %>
+      </h2>
+    </div>
+    <div class="diary__page__main__content">
+      <p class="diary__content">
+        <%= @diary.content %>
+      </p>
+    </div>
+  </div>
+
+</section>
