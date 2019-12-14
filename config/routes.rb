@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [:index]
+
   post "create" => "diaries#create"
 
   root 'diaries#index'

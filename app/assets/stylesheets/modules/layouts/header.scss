@@ -16,7 +16,7 @@ header {
     position: relative;
     display: block;
     margin: 0 auto;
-    padding: 0 0 0 30px;
+    padding: 0 0 0 40px;
 
     .three {
       display: none;
@@ -35,7 +35,7 @@ header {
       list-style-type: none;
       position: absolute;
       top: 0;
-      right: 20px;
+      right: 25px;
 
       li {
         position: relative;
@@ -43,7 +43,7 @@ header {
         padding: 0 20px;
         cursor: pointer;
         &:hover {
-          color: #ed7284;
+          color: $accent_color;
         }
         .search-from {
           position: relative;
@@ -56,6 +56,7 @@ header {
             outline: 0;
             border-radius: 10px;
             border: 1px solid $black_color;
+            background-color: transparent;
           }
           .search-btn {
             position: absolute;
@@ -73,63 +74,15 @@ header {
           }
         }
 
-        .menu-inner-a {
-          position: absolute;
-          top: 100%;
-          right: 0;
-          margin: 0;
-          z-index: 100;
-          height: 0;
-          background-color: $white_color;
-          overflow: hidden;
-          transition: all 0.3s ease-in-out;
-
-          &.active {
-            height: 80px;
-          }
-
-          .menu-a-wrapper{
-            margin: 0 auto;
-            padding: 10px 0 0;
-            text-align: center;
-
-            .menu-a {
-              margin: 0 auto;
-              list-style-type: none;
-              text-align: center;
-
-              li {
-                display: block;
-                padding: 0;
-                margin: 0 0 5px;
-
-                a {
-                  display: block;
-                  padding: 0 5px;
-                  width: 90px;
-                  color: $black_color;
-                  font-size: 1.4rem;
-                  border-bottom: 0.2px solid rgb(190, 190, 190);
-                  transition: all 0.3s ease-in-out;
-
-                  &:hover {
-                    color: #ed7284;
-                  }
-                }
-              }
-            }
-          }
-        }
-
         a {
           display: block;
           font-weight: bold;
           color: $black_color;
           padding: 22px 0 27px;
           line-height: 2;
-          transition: all 0.3s ease-in-out;
+          transition: all 0.2s ease-in-out;
           &:hover {
-            color: #ed7284;
+            color: $accent_color;
           }
           &::after {
             content: "";
@@ -177,6 +130,125 @@ header {
       }
       .menu {
         display: none;
+      }
+    }
+  }
+}
+
+.menu-inner-a {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  background-color: $off_white;
+  z-index: 100;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    height: 82px;
+  }
+
+  .menu-a-wrapper{
+    margin: 0 auto;
+    padding: 30px 0;
+    text-align: center;
+
+    .menu-a {
+      margin: 0 auto;
+      list-style-type: none;
+      width: 940px;
+      text-align: right;
+
+      li {
+        display: inline-block;
+        margin: 0 30px;
+
+        a {
+          padding-bottom: 7px;
+          color: $black_color;
+          font-size: 1.5rem;
+          border-bottom: 0.2px solid rgb(190, 190, 190);
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            color: $accent_color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu-inner-b {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  background-color: $off_white;
+  z-index: 100;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    height: 150px;
+  }
+
+  .menu-b-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px 30px;
+    text-align: center;
+
+    .menu-b {
+      float: right;
+      list-style-type: none;
+
+      li {
+        width: 200px;
+        text-align: left;
+        margin: 0 0 40px;
+
+        &.m-min {
+          margin: 0 0 25px;
+        }
+
+        &.right {
+          float: right;
+        }
+
+        .menu-b-top {
+
+          .menu-b-title {
+            display: inline-block;
+            padding-bottom: 5px;
+            color: $black_color;
+            font-size: 1.4rem;
+            border-bottom: 0.2px solid rgb(190, 190, 190);
+            transition: all 0.2s ease-in-out;
+            margin-bottom: 15px;
+            cursor: default;
+          }
+          .menu-link {
+            margin-bottom: 7px;
+            a {
+              color: $black_color;
+              font-size: 1.3rem;
+              transition: all 0.2s ease-in-out;
+              border-bottom: none;
+              &:hover {
+                color: $accent_color;
+              }
+              i {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
       }
     }
   }

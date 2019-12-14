@@ -25,6 +25,7 @@ class DiariesController < ApplicationController
   end
 
   def search
+
   end
 
   private

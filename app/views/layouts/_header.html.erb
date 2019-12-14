@@ -20,25 +20,56 @@
         <% end %>
       </li>
       <li><a href="#">Ranking</a></li>
-      <li><a href="#">プロフィール</a></li>
-      <li class="menu-head-a">
+      <li class="menu-head-b">
         編集
         <i class="fas fa-sort-down"></i>
-        <div class="menu-inner-a">
-          <div class="menu-a-wrapper">
-            <ul class="menu-a">
-              <li><a href="#">
-                <i class="far fa-bookmark"></i>
-                記事
-              </a></li>
-              <li><a href="#">
-                <i class="far fa-heart"></i>
-                ユーザー
-              </a></li>
-            </ul>
-          </div>
-        </div>
       </li>
     </ul>
   </div>
 </header>
+
+
+<div class="menu-inner-b">
+  <div class="menu-b-wrapper">
+    <ul class="menu-b">
+      <li>
+        <dl class="menu-b-top">
+          <dt class="menu-b-title">ブックマーク/お気に入り</dt>
+          <dd class="menu-link">
+            <%= link_to root_path do %>
+              <i class="far fa-bookmark"></i>
+              記事
+            <% end %>
+          </dd>
+          <dd class="menu-link">
+            <a href="#">
+              <i class="far fa-heart"></i>
+              ユーザー
+            </a>
+          </dd>
+          </dt>
+        </dl>
+      </li>
+    </ul>
+    <ul class="menu-b">
+      <li>
+        <dl class="menu-b-top">
+          <dt class="menu-b-title">マイコンテンツ</dt>
+          <dd class="menu-link">
+            <%= link_to users_path(current_user) do %>
+              <i class="fas fa-file-medical-alt"></i>
+              マイ記事
+            <% end %>
+          </dd>
+          <dd class="menu-link">
+            <a href="#">
+              <i class="fas fa-pen"></i>
+              プロフィール
+            </a>
+          </dd>
+          </dt>
+        </dl>
+      </li>
+    </ul>
+  </div>
+</div>
