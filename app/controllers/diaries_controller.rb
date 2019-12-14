@@ -25,11 +25,19 @@ class DiariesController < ApplicationController
   end
 
   def search
+    title_diaries = Diary.where('title LIKE(?)', "%#{keyword_params[:keyword]}%")
+    content_diaries = Diary.where('content LIKE(?)', "%#{keyword_params[:keyword]}%")
 
+    @diaries = [*title_diaries, *content_diaries]
+    @keyword = keyword_params[:keyword]
   end
 
   private
   def diary_params
     params.require(:diary).permit(:title ,:content, images_attributes: [:image])
+  end
+
+  def keyword_params
+    params.permit(:keyword)
   end
 end
