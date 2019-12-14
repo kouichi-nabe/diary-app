@@ -18,10 +18,11 @@ $(document).on('turbolinks:load', function(){
   })
 
   // menu sub
-  $('.menu-head-a,.menu-inner-a').hover(function(){
-    $('.menu-inner-a').addClass('active');
+  $('.menu-head-b,.menu-inner-b').hover(function(){
+    console.log('ok')
+    $('.menu-inner-b').addClass('active');
   }, function(){
-    $('.menu-inner-a').removeClass('active');
+    $('.menu-inner-b').removeClass('active');
   });
 
   // menu hamburger

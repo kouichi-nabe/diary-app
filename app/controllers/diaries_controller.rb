@@ -18,13 +18,14 @@ class DiariesController < ApplicationController
     @diary = Diary.new(diary_params)
     @diary.user_id = current_user.id
     if @diary.save
-      redirect_back(fallback_location: root_path)
+      redirect_to users_path(current_user)
     else
-      redirect_back(fallback_location: root_path)
+      render 'new'
     end
   end
 
   def search
+
   end
 
   private
