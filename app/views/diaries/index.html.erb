@@ -12,8 +12,9 @@
           <%= link_to diary_path(diary), class: "diary-link" do %>
             <%= image_tag diary.images[0].image.url, class: 'diary-image' %>
             <div class="diary-title">
-              <time>2019.11.20</time>
-              <h3>dinner</h3>
+              <time><%= diary.updated_at.strftime("%Y %m %d") %>
+              </time>
+              <h3><%= diary.title %></h3>
             </div>
           <% end %>
         </li>
