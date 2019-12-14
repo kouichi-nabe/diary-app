@@ -10,7 +10,7 @@ $(document).on('turbolinks:load', function(){
   window.addEventListener('scroll', function(){
     var scrollHeight = getScroll();
 
-    if( scrollHeight > 200 ){
+    if( scrollHeight > 80 ){
       header.addClass('active');
     } else {
       header.removeClass('active');
