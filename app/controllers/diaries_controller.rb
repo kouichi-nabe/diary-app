@@ -18,7 +18,7 @@ class DiariesController < ApplicationController
     @diary = Diary.new(diary_params)
     @diary.user_id = current_user.id
     if @diary.save
-      redirect_to users_path(current_user)
+      redirect_to user_path(current_user)
     else
       render 'new'
     end

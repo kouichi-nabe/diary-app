@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  def index
-    @diaries = current_user.diaries.all
+
+  def show
+    @diaries = User.find(params[:id]).diaries.all
+    @user = User.find(params[:id])
   end
+
 end
