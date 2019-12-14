@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   var previews = document.querySelectorAll('.preview');
 
   previews.forEach( function(value, index){
