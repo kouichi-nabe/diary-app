@@ -14,13 +14,19 @@
       <dl class="form__fieldset">
         <dt class="form__fieldset__title">
           画像を投稿
+          <span class="form__fieldset__title__sub">（１〜３枚）</span>
           <em class="form__fieldset__title__required">必須</em>
         </dt>
         <dd class="form__fieldset__content">
-          <div class="form__inner image__form">
+          <div class="form__inner image__form clearfix">
             <%= f.fields_for :images do |image| %>
-              <%= image.file_field :image, class: "image__file" %>
-              <div class="preview"></div>
+              <div class="image__form__inner">
+                <%= image.label :image, class: "image__input__label" do %>
+                  <i class="far fa-images"></i>
+                  <%= image.file_field :image, class: "image__file" %>
+                <% end %>
+                <div class="preview"></div>
+              </div>
             <% end %>
           </div>
         </dd>
