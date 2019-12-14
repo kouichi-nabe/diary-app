@@ -88,6 +88,45 @@
       }
     }
   }
+  
+  .option__form {
+    margin: 70px auto 0;
+    width: calc(90% - 40px);
+    max-width: 1206px;
+
+    .follow__form {
+      text-align: left;
+
+      &__user {
+        display: inline-block;
+      }
+      &__btn {
+        display: inline-block;
+        font-size: 1.3rem;
+        margin-left: 10px;
+        padding: 2.5px 8px 3px;
+        border-radius: 20px;
+        border: 1px solid $accent_color;
+        background-color: $accent_color;
+        color: $white_color;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          background-color: $white_color;
+          color: $accent_color;
+        }
+        &.follow {
+          border: 1px solid $accent_color;
+          background-color: $white_color;
+          color: $accent_color;
+          &:hover {
+            background-color: $accent_color;
+            color: $white_color;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 640px){
