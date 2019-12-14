@@ -41,6 +41,13 @@
           letter-spacing: .02em;
           text-align: left;
 
+          &__sub {
+            font-size: 1.2rem;
+            font-weight: lighter;
+            line-height: 1.55;
+            vertical-align: baseline;
+          }
+
           &__required {
             position: relative;
             bottom: 0.1em;
@@ -63,6 +70,21 @@
             &.image__form {
               width: 100%;
               text-align: left;
+              display: flex;
+
+              .image__form__inner {
+                margin-right: 50px;
+                flex: 0 0 auto;
+
+                .image__input__label {
+                  cursor: pointer;
+                  font-size: 3rem;
+
+                  .image__file {
+                    display: none;
+                  }
+                }
+              }
             }
 
             &.wide__input {

@@ -11,7 +11,7 @@ $(function(){
   });
 })
 
-document.addEventListener('DOMContentLoaded', function(){
+$(document).on('turbolinks:load', function(){
   var header = $('header');
 
   function getScroll(){

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).on('turbolinks:load', function () {
   if( $(window).width() >= 800 ){
     hsize = $(window).width() / 3;
     $(".diary-box").css("height", hsize + "px");
@@ -7,6 +7,7 @@ $(document).ready(function () {
     $(".diary-box").css("height", hsize + "px");
   }
 });
+
 $(window).resize(function () {
   if( $(window).width() >= 800 ){
     hsize = $(window).width() / 3;
