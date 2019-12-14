@@ -10,21 +10,26 @@
     <%= link_to diaries_path, class: "site-logo" do %>
       <div class="site__title">DIARY APP</div>
     <% end %>
-    <ul class="menu">
-      <li>
-        <%= form_tag('/diaries/search',class: "search-from", method: :get) do %>
-          <input class="search-input" name="keyword" placeholder="キーワード検索" type="text" value="">
-          <button class="search-btn" title="検索" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        <% end %>
-      </li>
-      <li><a href="#">Ranking</a></li>
-      <li class="menu-head-b">
-        編集
-        <i class="fas fa-sort-down"></i>
-      </li>
-    </ul>
+    <% if user_signed_in? %>
+      <ul class="menu">
+        <li>
+          <%= form_tag('/diaries/search',class: "search-from", method: :get) do %>
+            <input class="search-input" name="keyword" placeholder="キーワード検索" type="text" value="">
+            <button class="search-btn" title="検索" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          <% end %>
+        </li>
+        <li><a href="#">Ranking</a></li>
+        <li class="menu-head-b">
+          編集
+          <i class="fas fa-sort-down"></i>
+        </li>
+        <li>
+          <%= link_to "ログアウト", "/users/sign_out", method: :delete %>
+        </li>
+      </ul>
+    <% end %>
   </div>
 </header>
 

@@ -3,28 +3,30 @@
     <h2>Enjoy &nbsp;&nbsp; Carefree & freedom &nbsp;&nbsp; User</h2>
   </section>
 
-  <section class="home__diaries">
-    <ul class="diaries">
+  <% if user_signed_in? %>
+    <section class="home__diaries">
+      <ul class="diaries">
+        <% @diaries.each do |diary| %>
 
-      <% @diaries.each do |diary| %>
+          <li class="diary-box">
+            <%= link_to diary_path(diary), class: "diary-link" do %>
+              <%= image_tag diary.images[0].image.url, class: 'diary-image' %>
+              <div class="diary-title">
+                <time><%= diary.updated_at.strftime("%Y %m %d") %>
+                </time>
+                <h3><%= diary.title %></h3>
+              </div>
+            <% end %>
+          </li>
 
-        <li class="diary-box">
-          <%= link_to diary_path(diary), class: "diary-link" do %>
-            <%= image_tag diary.images[0].image.url, class: 'diary-image' %>
-            <div class="diary-title">
-              <time><%= diary.updated_at.strftime("%Y %m %d") %>
-              </time>
-              <h3><%= diary.title %></h3>
-            </div>
-          <% end %>
-        </li>
+        <% end %>
+      </ul>
+    </section>
+    <div class="post__new__diary">
+      <%= link_to "日記を投稿", new_diary_path, class: "post__new__diary__link" %>
+    </div>
 
-      <% end %>
-
-    </ul>
-  </section>
-
-  <div class="post__new__diary">
-    <%= link_to "日記を投稿", new_diary_path, class: "post__new__diary__link" %>
-  </div>
+  <% else %>
+    <%= link_to "ログインをお願いします", new_user_registration_path, class: "need__login" %>
+  <% end %>
 </main>
