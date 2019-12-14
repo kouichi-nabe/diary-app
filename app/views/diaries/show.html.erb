@@ -5,7 +5,7 @@
         <div class="three__images__head">
           <%= image_tag @diary.images[0].image.url, class: 'three__images__head__image' %>
         </div>
-        <div class="three__images__bottom">
+        <div class="three__images__bottom clearfix">
           <%= image_tag @diary.images[1].image.url, class: 'three__images__bottom__image' %>
           <%= image_tag @diary.images[2].image.url, class: 'three__images__bottom__image' %>
         </div>
@@ -32,7 +32,7 @@
     </div>
     <div class="diary__page__main__content">
       <p class="diary__content">
-        <%= @diary.content %>
+        <%= simple_format(@diary.content) %>
       </p>
     </div>
   </div>
