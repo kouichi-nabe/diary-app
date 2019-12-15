@@ -6,7 +6,7 @@
 
 ## ER図
 
-![diary-app](https://user-images.githubusercontent.com/47510849/70773019-9689f400-1db9-11ea-8c92-192052c15e8e.png)
+![diary-app2](https://user-images.githubusercontent.com/47510849/70861171-94689680-1f6d-11ea-9159-364d40c75198.png)
 
 
 ## usersテーブル
@@ -78,14 +78,14 @@
 - belongs_to :user
 
 
-## like_usersテーブル
+## relationshipsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|writer_id|references|null: false, foreign_key: true|
-|reader_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|follow_id|references|null: false, foreign_key: true|
 
 
 ### Association
-- belongs_to :writer, class_name "User"
-- belongs_to :reader, class_name "User"
+- belongs_to :user
+- belongs_to :follow, class_name: 'User'
