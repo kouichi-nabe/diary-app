@@ -1,11 +1,13 @@
-<div class="like__form" id="like-link-<%= diary.id %>">
-  <% if current_user.like_diaries.find_by(diary_id: diary.id) %>
-    <%= link_to unlike_path(diary.id), method: :delete, class: "like__form__link liked", remote: true do %>
-        <i class="far fa-bookmark"></i>
+<% unless current_user.id == diary.user.id %>
+  <div class="like__form" id="like-link-<%= diary.id %>">
+    <% if current_user.like_diaries.find_by(diary_id: diary.id) %>
+      <%= link_to unlike_path(diary.id), method: :delete, class: "like__form__link liked", remote: true do %>
+          <i class="far fa-bookmark"></i>
+      <% end %>
+    <% else %>
+      <%= link_to like_path(diary.id), method: :post, class: "like__form__link", remote: true do %>
+          <i class="far fa-bookmark"></i>
+      <% end %>
     <% end %>
-  <% else %>
-    <%= link_to like_path(diary.id), method: :post, class: "like__form__link", remote: true do %>
-        <i class="far fa-bookmark"></i>
-    <% end %>
-  <% end %>
-</div>
+  </div>
+<% end %>

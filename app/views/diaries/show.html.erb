@@ -39,6 +39,7 @@
 
   <div class="option__form clearfix">
     <%= render :partial => "relationships/follow_button", :locals => { diary: @diary } %>
+    <div class="phantom__content"></div>
     <%= render partial: 'diaries/like', :locals => { diary: @diary } %>
 
     <% if @diary.user.id == current_user.id %>

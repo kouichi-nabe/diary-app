@@ -13,6 +13,7 @@
         <%= diary.user.nickname %>
       </div>
       <%= hidden_field_tag :follow_id, diary.user.id %>
+      <%= hidden_field_tag :diary_id, diary.id %>
       <%= f.submit 'フォロー', class: 'follow__form__btn follow' %>
     <% end %>
   <% end %>

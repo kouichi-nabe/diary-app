@@ -129,6 +129,9 @@
         }
       }
     }
+    .phantom__content {
+      display: none;
+    }
     .like__form {
       float: left;
       margin: 0 30px;
@@ -196,13 +199,115 @@
   }
 }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 768px){
   .diary__page {
     &__head {
       &__inner {
         .three__images__head {
           margin-bottom: .3em;
         }
+      }
+    }
+    .option__form {
+      margin: 70px auto 0;
+      width: calc(90% - 40px);
+      max-width: 1206px;
+      text-align: left;
+
+      .follow__form {
+        float: none;
+        display: inline-block;
+        padding: 5px 10px;
+        margin-bottom: 20px;
+        background-color: $off_white;
+        box-shadow: 0 1px 3px $shadow_color;
+
+        &__user {
+          display: inline-block;
+        }
+        &__btn {
+          display: inline-block;
+          font-size: 1.3rem;
+          margin-left: 10px;
+          padding: 2.5px 12px 3px;
+          border-radius: 20px;
+          border: 1px solid $accent_color;
+          background-color: $accent_color;
+          color: $white_color;
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            background-color: $white_color;
+            color: $accent_color;
+          }
+          &.follow {
+            border: 1px solid $accent_color;
+            background-color: $white_color;
+            color: $accent_color;
+            &:hover {
+              background-color: $accent_color;
+              color: $white_color;
+            }
+          }
+        }
+      }
+      .phantom__content {
+        display: block;
+        margin: 1px auto;
+      }
+      .like__form {
+        float: none;
+        display: inline-block;
+        margin: 0;
+        padding: 5px 15px;
+        background-color: $off_white;
+        box-shadow: 0 1px 3px $shadow_color;
+
+        &__link {
+          display: inline-block;
+          font-size: 1.3rem;
+          padding: 2.5px 15px 3px;
+          border-radius: 20px;
+          border: 1px solid $accent_color;
+          background-color: $white_color;
+          color: $accent_color;
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            background-color: $accent_color;
+            color: $white_color;
+          }
+          &.liked {
+            border: 1px solid $accent_color;
+            background-color: $accent_color;
+            color: $white_color;
+            &:hover {
+              background-color: $white_color;
+              color: $accent_color;
+            }
+          }
+          &.active {
+            background-color: $accent_color;
+            color: $white_color;
+            &:hover {
+              background-color: $accent_color;
+              color: $white_color;
+            }
+            &.liked {
+              border: 1px solid $accent_color;
+              background-color: $white_color;
+              color: $accent_color;
+              &:hover {
+                background-color: $accent_color;
+                color: $white_color;
+              }
+            }
+          }
+        }
+      }
+
+      .delete__form,.edit__form {
+        display: none;
       }
     }
   }
