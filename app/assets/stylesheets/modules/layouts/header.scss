@@ -16,7 +16,7 @@ header {
     position: relative;
     display: block;
     margin: 0 auto;
-    padding: 0 0 0 40px;
+    padding: 0 40px 0;
 
     .three {
       display: none;
@@ -122,7 +122,7 @@ header {
       }
 
       .site-logo {
-        h1 {
+        .site__title {
           display: inline-block;
           text-align: center;
           margin: 0 auto;
