@@ -19,7 +19,6 @@ $(document).on('turbolinks:load', function(){
 
   // menu sub
   $('.menu-head-b,.menu-inner-b').hover(function(){
-    console.log('ok')
     $('.menu-inner-b').addClass('active');
   }, function(){
     $('.menu-inner-b').removeClass('active');

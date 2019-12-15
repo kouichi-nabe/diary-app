@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
-
   resources :relationships, only: [:create, :destroy, :index]
+  resources :like_diaries, only: [:index]
+
+  post   '/like_diaries/:diary_id' => 'like_diaries#like',   as: 'like'
+  delete '/like_diaries/:diary_id' => 'like_diaries#unlike', as: 'unlike'
 
   post "create" => "diaries#create"
 
