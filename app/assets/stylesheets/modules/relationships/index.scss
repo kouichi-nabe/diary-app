@@ -1,0 +1,104 @@
+.follow__management {
+  margin: 100px auto;
+  padding: 0;
+
+  &__inner {
+    margin: 0 auto;
+    width: 600px;
+
+    .follow__list__head {
+      display: block;
+      margin: 0;
+      width: 100%;
+      background-color: $white_color;
+      font-size: 0;
+
+      &__item {
+        display: inline-block;
+        width: 50%;
+        text-align: center;
+        vertical-align: top;
+        background-color: $white_color;
+        border: 1px solid $border_color;
+        border-bottom: none;
+        cursor: pointer;
+        &.active {
+          h3 {
+            color: $white_color;
+            background-color: $accent_color;
+          }
+        }
+        h3 {
+          display: block;
+          color: $black_color;
+          font-size: 1.8rem;
+          letter-spacing: 1px;
+          line-height: 72px;
+        }
+      }
+    }
+    .follow__list__content {
+      &__list {
+        display: none;
+        &.active {
+          display: block;
+        }
+
+        .follower__box {
+          position: relative;
+          border: 1px solid $border_color;
+          border-top: none;
+          width: 100%;
+          height: 60px;
+          padding: 15.5px 30px;
+          transition: all 0.3s ease-in-out;
+          &:nth-of-type(1){
+            border-top: 1px solid $border_color;
+          }
+          &:hover {
+            background-color: $off_white;
+          }
+
+          .follow__form {
+            width: 100%;
+            height: 100%;
+
+            &__user {
+              float: left;
+              display: block;
+              font-size: 1.8rem;
+              &:hover {
+                border-bottom: 0.3px solid $black_color;
+              }
+            }
+            &__btn {
+              float: right;
+              font-size: 1.3rem;
+              margin-left: 10px;
+              padding: 2.5px 8px 3px;
+              border-radius: 20px;
+              border: 1px solid $accent_color;
+              background-color: $accent_color;
+              color: $white_color;
+              transition: all 0.2s ease-in-out;
+              cursor: pointer;
+              &:hover {
+                background-color: $white_color;
+                color: $accent_color;
+              }
+              &.follow {
+                border: 1px solid $accent_color;
+                background-color: $white_color;
+                color: $accent_color;
+                &:hover {
+                  background-color: $accent_color;
+                  color: $white_color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

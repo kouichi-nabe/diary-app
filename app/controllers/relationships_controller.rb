@@ -1,5 +1,10 @@
 class RelationshipsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:create, :destroy]
+
+  def index
+    @followings = current_user.followings
+    @followers = current_user.followers
+  end
 
   def create
     user = User.find(params[:follow_id])
@@ -15,7 +20,7 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:follow_id])
     following = current_user.unfollow(user)
     if following.destroy
-      redirect_to root_path
+      redirect_to :back
     else
       rredirect_to :back
     end
