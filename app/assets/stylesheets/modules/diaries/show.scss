@@ -132,15 +132,14 @@
     .like__form {
       float: left;
       margin: 0 30px;
-      padding: 5px 10px;
+      padding: 5px 15px;
       background-color: $off_white;
       box-shadow: 0 1px 3px $shadow_color;
 
       &__link {
         display: block;
         font-size: 1.3rem;
-        margin-left: 10px;
-        padding: 2.5px 12px 3px;
+        padding: 2.5px 15px 3px;
         border-radius: 20px;
         border: 1px solid $accent_color;
         background-color: $white_color;
@@ -176,9 +175,6 @@
               color: $white_color;
             }
           }
-        }
-        i {
-          margin-right: 8px;
         }
       }
     }

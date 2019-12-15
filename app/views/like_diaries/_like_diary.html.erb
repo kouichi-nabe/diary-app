@@ -2,12 +2,10 @@
   <% if current_user.like_diaries.find_by(diary_id: diary.id) %>
     <%= link_to unlike_path(diary.id), method: :delete, class: "like__form__link liked", remote: true do %>
         <i class="far fa-bookmark"></i>
-        <span class="like__form__link__count"><%= diary.bookmark_users.count %></span>
     <% end %>
   <% else %>
     <%= link_to like_path(diary.id), method: :post, class: "like__form__link", remote: true do %>
         <i class="far fa-bookmark"></i>
-        <span class="like__form__link__count"><%= diary.bookmark_users.count %></span>
     <% end %>
   <% end %>
 </div>
