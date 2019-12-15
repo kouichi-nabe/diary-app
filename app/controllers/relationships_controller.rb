@@ -12,7 +12,7 @@ class RelationshipsController < ApplicationController
     if following.save
       redirect_to user_path(user)
     else
-      redirect_to :back
+      redirect_to diary_path(params[:diary_id])
     end
   end
 
@@ -20,9 +20,9 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:follow_id])
     following = current_user.unfollow(user)
     if following.destroy
-      redirect_to :back
+      redirect_to relationships_path(current_user)
     else
-      rredirect_to :back
+      redirect_to relationships_path(current_user)
     end
   end
 
