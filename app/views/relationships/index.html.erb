@@ -1,0 +1,45 @@
+<section class="follow__management">
+  <div class="follow__management__inner">
+
+    <ul class="follow__list__head">
+      <li class="follow__list__head__item active" data-tab="1">
+        <h3>フォロー中</h3>
+      </li>
+      <li class="follow__list__head__item" data-tab="2">
+        <h3>フォロワー</h3>
+      </li>
+    </ul>
+
+    <div class="follow__list__content">
+      <ul class="follow__list__content__list active" data-tab="1">
+        <% @followings.each do |follower| %>
+
+          <li class="follower__box">
+            <%= form_for(current_user.relationships.find_by(follow_id: follower.id), html: { method: :delete, class: 'follow__form clearfix' }) do |f| %>
+              <%= link_to user_path(follower.id), class: "follow__form__user" do %>
+                <%= follower.nickname %>
+              <% end %>
+              <%= hidden_field_tag :follow_id, follower.id %>
+              <%= f.submit 'フォロー解除', class: 'follow__form__btn' %>
+            <% end %>
+          </li>
+
+        <% end %>
+      </ul>
+
+      <ul class="follow__list__content__list" data-tab="2">
+        <% @followers.each do |follower| %>
+
+          <li class="follower__box">
+            <%= form_for(current_user.relationships.build, html:{class: 'follow__form clearfix'},) do |f| %>
+              <%= link_to user_path(follower.id), class: "follow__form__user" do %>
+                <%= follower.nickname %>
+              <% end %>
+              <%= hidden_field_tag :follow_id, follower.id %>
+              <%= f.submit 'フォロー', class: 'follow__form__btn follow' %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+</section>
