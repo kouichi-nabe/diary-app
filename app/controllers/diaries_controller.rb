@@ -24,6 +24,13 @@ class DiariesController < ApplicationController
     end
   end
 
+  def destroy
+    diary = Diary.find(params[:id])
+    diary.destroy if current_user.id == diary.user_id
+
+    redirect_to root_path
+  end
+
   def search
     title_diaries = Diary.where('title LIKE(?)', "%#{keyword_params[:keyword]}%")
     content_diaries = Diary.where('content LIKE(?)', "%#{keyword_params[:keyword]}%")
