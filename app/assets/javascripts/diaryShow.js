@@ -12,6 +12,11 @@ $(document).on('turbolinks:load', function () {
 
   //one images
   $(".one__images__head__image").css("height", headsize + "px");
+
+  //like_diary
+  $('.like__form').on('click', function(){
+    $('.like__form__link').toggleClass('active');
+  })
 });
 
 $(window).resize(function () {

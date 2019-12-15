@@ -95,7 +95,10 @@
     max-width: 1206px;
 
     .follow__form {
-      text-align: left;
+      float: left;
+      padding: 5px 10px;
+      background-color: $off_white;
+      box-shadow: 0 1px 3px $shadow_color;
 
       &__user {
         display: inline-block;
@@ -104,7 +107,7 @@
         display: inline-block;
         font-size: 1.3rem;
         margin-left: 10px;
-        padding: 2.5px 8px 3px;
+        padding: 2.5px 12px 3px;
         border-radius: 20px;
         border: 1px solid $accent_color;
         background-color: $accent_color;
@@ -126,6 +129,56 @@
         }
       }
     }
+    .like__form {
+      float: left;
+      margin: 0 30px;
+      padding: 5px 15px;
+      background-color: $off_white;
+      box-shadow: 0 1px 3px $shadow_color;
+
+      &__link {
+        display: block;
+        font-size: 1.3rem;
+        padding: 2.5px 15px 3px;
+        border-radius: 20px;
+        border: 1px solid $accent_color;
+        background-color: $white_color;
+        color: $accent_color;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          background-color: $accent_color;
+          color: $white_color;
+        }
+        &.liked {
+          border: 1px solid $accent_color;
+          background-color: $accent_color;
+          color: $white_color;
+          &:hover {
+            background-color: $white_color;
+            color: $accent_color;
+          }
+        }
+        &.active {
+          background-color: $accent_color;
+          color: $white_color;
+          &:hover {
+            background-color: $accent_color;
+            color: $white_color;
+          }
+          &.liked {
+            border: 1px solid $accent_color;
+            background-color: $white_color;
+            color: $accent_color;
+            &:hover {
+              background-color: $accent_color;
+              color: $white_color;
+            }
+          }
+        }
+      }
+    }
+
     .delete__form,.edit__form {
       float: right;
       display: block;

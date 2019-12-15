@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_14_204431) do
+ActiveRecord::Schema.define(version: 2019_12_15_073119) do
 
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 2019_12_14_204431) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["diary_id"], name: "index_images_on_diary_id"
+  end
+
+  create_table "like_diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "diary_id"
+    t.index ["diary_id"], name: "index_like_diaries_on_diary_id"
+    t.index ["user_id"], name: "index_like_diaries_on_user_id"
   end
 
   create_table "like_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -74,6 +81,8 @@ ActiveRecord::Schema.define(version: 2019_12_14_204431) do
 
   add_foreign_key "diaries", "users"
   add_foreign_key "images", "diaries"
+  add_foreign_key "like_diaries", "diaries"
+  add_foreign_key "like_diaries", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
