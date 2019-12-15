@@ -88,7 +88,7 @@
       }
     }
   }
-  
+
   .option__form {
     margin: 70px auto 0;
     width: calc(90% - 40px);
@@ -124,6 +124,19 @@
             color: $white_color;
           }
         }
+      }
+    }
+    .delete__form {
+      float: right;
+      display: block;
+      padding: 5px 10px;
+      letter-spacing: .5px;
+      background-color: $off_white;
+      box-shadow: 0 1px 3px $shadow_color;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $accent_color;
+        box-shadow: 2px 2px 3px $shadow_color;
       }
     }
   }

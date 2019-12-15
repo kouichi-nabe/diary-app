@@ -37,8 +37,12 @@
     </div>
   </div>
 
-  <div class="option__form">
+  <div class="option__form clearfix">
     <%= render :partial => "relationships/follow_button", :locals => { diary: @diary } %>
+
+    <% if @diary.user.id == current_user.id %>
+      <%= link_to "この日記を消します", diary_path(@diary), method: :delete, class: "delete__form" %>
+    <% end %>
   </div>
 
 </section>
