@@ -1,0 +1,65 @@
+<main class="post__diary">
+  <section class="post__diary__head">
+    <div class="post__diary__head__title">
+      <h1>日記を編集しますか？</h1>
+    </div>
+
+    <div class="post__diary__head__description">
+      <p>以下の項目にご記入し、「編集する」ボタンを押してください。</p>
+    </div>
+  </section>
+
+  <section class="post__diary__form">
+    <%= form_for(@diary, html:{class: 'form__section'}, :url => {:action => :update}) do |f| %>
+      <dl class="form__fieldset">
+        <dt class="form__fieldset__title">
+          画像を投稿
+          <span class="form__fieldset__title__sub">（１〜３枚）</span>
+          <em class="form__fieldset__title__required">必須</em>
+        </dt>
+        <dd class="form__fieldset__content">
+          <div class="form__inner image__form clearfix">
+            <%= f.fields_for :images do |image| %>
+              <div class="image__form__inner">
+                <%= image.label :image, class: "image__input__label" do %>
+                  <i class="far fa-images"></i>
+                  <%= image.file_field :image, class: "image__file" %>
+                <% end %>
+                <div class="preview">
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </dd>
+      </dl>
+
+      <dl class="form__fieldset">
+        <dt class="form__fieldset__title">
+          タイトル
+          <em class="form__fieldset__title__required">必須</em>
+        </dt>
+        <dd class="form__fieldset__content">
+          <div class="form__inner wide__input">
+            <%= f.text_field :title, class: 'input-default' %>
+          </div>
+        </dd>
+      </dl>
+
+      <dl class="form__fieldset">
+        <dt class="form__fieldset__title">
+          ご自由に...
+        </dt>
+        <dd class="form__fieldset__content">
+          <div class="form__inner wide__input">
+            <%= f.text_area :content, class: 'input-default content__area' %>
+          </div>
+        </dd>
+      </dl>
+
+      <div class="form__submit">
+        <%= f.submit '編集する', class: "form__submit__input" %>
+      </div>
+
+    <% end %>
+  </section>
+</main>

@@ -42,6 +42,7 @@
 
     <% if @diary.user.id == current_user.id %>
       <%= link_to "この日記を消します", diary_path(@diary), method: :delete, class: "delete__form" %>
+      <%= link_to "この日記を編集します", edit_diary_path(@diary), method: :get, class: "edit__form" %>
     <% end %>
   </div>
 

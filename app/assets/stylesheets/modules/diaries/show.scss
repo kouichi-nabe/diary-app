@@ -126,14 +126,15 @@
         }
       }
     }
-    .delete__form {
+    .delete__form,.edit__form {
       float: right;
       display: block;
       padding: 5px 10px;
+      margin: 0 20px;
       letter-spacing: .5px;
       background-color: $off_white;
       box-shadow: 0 1px 3px $shadow_color;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.2s ease-in-out;
       &:hover {
         background-color: $accent_color;
         box-shadow: 2px 2px 3px $shadow_color;

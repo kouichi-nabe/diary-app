@@ -24,6 +24,20 @@ class DiariesController < ApplicationController
     end
   end
 
+  def edit
+    @diary = Diary.find(params[:id])
+    count = @diary.images.count
+    (3 - count).times { @diary.images.build }
+  end
+
+  def update
+    diary = Diary.find(params[:id])
+    if current_user.id == diary.user_id
+      diary.update(diary_params)
+      redirect_to root_path
+    end
+  end
+
   def destroy
     diary = Diary.find(params[:id])
     diary.destroy if current_user.id == diary.user_id
